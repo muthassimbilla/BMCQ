@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dynamic Live Code Generator</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Live Code Generator</h1>
+
+    <!-- Input Boxes -->
+    <div class="box">
+      <label for="q">Question:</label>
+      <input type="text" id="q" placeholder="Enter question text">
+    </div>
+    <div class="box">
+      <label for="option1">1:</label>
+      <input type="text" id="option1" placeholder="Enter option 1">
+    </div>
+    <div class="box">
+      <label for="option2">2:</label>
+      <input type="text" id="option2" placeholder="Enter option 2">
+    </div>
+    <div class="box">
+      <label for="option3">3:</label>
+      <input type="text" id="option3" placeholder="Enter option 3">
+    </div>
+    <div class="box">
+      <label for="option4">4:</label>
+      <input type="text" id="option4" placeholder="Enter option 4">
+    </div>
+    <div class="box">
+      <label for="answer">Correct Answer:</label>
+      <select id="answer">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+      </select>
+    </div>
+
+    <!-- Output Section -->
+    <div class="output" id="output">
+      {
+        q: '',
+        options: ['', '', '', ''],
+        answer: 0
+      }
+    </div>
+
+    <!-- Buttons -->
+    <div class="buttons">
+      <button class="copy-btn" onclick="copyAndReset()">Copy</button>
+      <button class="history-btn" onclick="openHistory()">History</button>
+    </div>
+  </div>
+
+  <!-- History Modal -->
+  <div class="modal" id="historyModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Output History</h2>
+        <button class="close-btn" onclick="closeHistory()">&times;</button>
+      </div>
+      <div id="historyList"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
